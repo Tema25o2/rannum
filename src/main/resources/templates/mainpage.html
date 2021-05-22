@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<head>
+    <title>main</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <style>
+        /* Global Button Styles */
+        .animated-button, .animated-button:visited {
+            position: relative;
+            display: block;
+            margin: 30px auto 0;
+            padding: 14px 15px;
+            color: #fff;
+            font-size:14px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            letter-spacing: .08em;
+            border-radius: 0;
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            transition: all 1s ease;
+        }
+        .animated-button:after, .animated-button:visited:after {
+            content: "";
+            position: absolute;
+            height: 0;
+            left: 50%;
+            top: 50%;
+            width: 150%;
+            z-index: -1;
+            -webkit-transition: all 0.75s ease 0s;
+            -moz-transition: all 0.75s ease 0s;
+            -o-transition: all 0.75s ease 0s;
+            transition: all 0.75s ease 0s;
+        }
+        .animated-button:hover, .animated-button:visited:hover {
+            color: #FFF;
+            text-shadow: none;
+        }
+        .animated-button:hover:after, .animated-button:visited:hover:after {
+            height: 450%;
+        }
+        .animated-button, .animated-button:visited {
+            position: relative;
+            display: block;
+            margin: 30px auto 0;
+            padding: 14px 15px;
+            color: #fff;
+            font-size:14px;
+            border-radius: 0;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            letter-spacing: .08em;
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            transition: all 1s ease;
+        }
+        .animated-button.thar-three {
+            color: #000;
+            cursor: pointer;
+            display: block;
+            position: relative;
+            border: 2px solid #F7CA18;
+            transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+        }
+        .animated-button.thar-three:hover {
+            color: #000 !important;
+            background-color: transparent;
+            txt-shadow: nthree;
+        }
+        .animated-button.thar-three:hover:before {
+            left: 0;
+            right: auto;
+            width: 100%;
+        }
+        .animated-button.thar-three:before {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 0;
+            z-index: -1;
+            content: '';
+            color: #000 !important;
+            background: #F7CA18;
+            transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+        }
+
+        .field-form-min {
+            width: 100px !important;
+            margin: 13px;
+        }
+
+        .field-form-max {
+            width: 100px !important;
+            margin: 10px;
+        }
+
+        .main-form{
+            margin-top: 17%;
+        }
+
+        .inter-container {
+            display: flex;
+            margin: 0 auto;
+            width: fit-content;
+            justify-content: center;
+            align-items: center;
+        }
+        .inter-container label {
+            margin-right: 15px;
+        }
+        .text-color {
+            color: #F7CA18;
+        }
+    </style>
+</head>
+
+<body class="text-center">
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-main-normal">Rannum</h5>
+</div>
+
+<main>
+    <form class="main-form" action="/main" method="post">
+        <h1 class="h3 mb-3 fw-normal text-color">Укажи диапазон:</h1>
+
+        <div class="inter-container">
+            <label for="inputMin">min значение: </label>
+            <input id="inputMin" name="min" class="form-control field-form-min" required>
+        </div>
+        <div class="inter-container">
+            <label for="inputMax">max значение: </label>
+            <input id="inputMax" name="max" class="form-control field-form-max mt-2" required>
+        </div>
+
+        <button class="btn btn-lg animated-button thar-three">узнать число</button>
+    </form>
+</main>
+</body>

@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>result</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <style>
+        /* Global Button Styles */
+        .animated-button, .animated-button:visited {
+            position: relative;
+            display: block;
+            margin: 30px auto 0;
+            padding: 14px 15px;
+            color: #000;
+            font-size:14px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            letter-spacing: .08em;
+            border-radius: 0;
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            transition: all 1s ease;
+        }
+        .animated-button:after, .animated-button:visited:after {
+            content: "";
+            position: absolute;
+            height: 0;
+            left: 50%;
+            top: 50%;
+            width: 150%;
+            z-index: -1;
+            -webkit-transition: all 0.75s ease 0s;
+            -moz-transition: all 0.75s ease 0s;
+            -o-transition: all 0.75s ease 0s;
+            transition: all 0.75s ease 0s;
+        }
+        .animated-button:hover, .animated-button:visited:hover {
+            color: #000;
+            text-shadow: none;
+        }
+        .animated-button:hover:after, .animated-button:visited:hover:after {
+            height: 450%;
+        }
+        .animated-button, .animated-button:visited {
+            position: relative;
+            display: block;
+            margin: 30px auto 0;
+            padding: 14px 15px;
+            color: #000;
+            font-size:14px;
+            border-radius: 0;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            letter-spacing: .08em;
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            transition: all 1s ease;
+        }
+
+        .animated-button.victoria-one {
+            border: 2px solid #F7CA18;
+        }
+        .animated-button.victoria-one:after {
+            background: #F7CA18;
+            -moz-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+            -ms-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+            -webkit-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+            transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+        }
+        .animated-button.victoria-two {
+            border: 2px solid #F7CA18;
+        }
+        .animated-button.victoria-two:after {
+            background: #F7CA18;
+            -moz-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+            -ms-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+            -webkit-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+            transform: translateX(-50%) translateY(-50%) rotate(25deg);
+        }
+
+        .take {
+            font-size: 30px;
+        }
+        .button-form {
+            width: 22% !important;
+        }
+        .main-form{
+            margin-top: 12%;
+        }
+        .result {
+            font-size: 100px;
+        }
+    </style>
+</head>
+
+<body class="text-center">
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-main-normal">Rannum</h5>
+</div>
+
+<main>
+    <form class="main-form" action="/main" method="post">
+        <p class="take">Держи, твоё число: </p>
+        <h1 th:text="${result}" class="result mb-3 fw-normal text-gray-dark"></h1>
+
+        <a class="btn btn-lg button-form animated-button victoria-one" href="/main/result">не нравиться результат? тыкай сюда!</a>
+        <a class="btn btn-lg button-form animated-button victoria-two" href="/main">хочешь изменить диапазон? тогда сюда тыкай!</a>
+    </form>
+</main>
+</body>
+</html>
